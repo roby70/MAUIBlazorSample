@@ -11,9 +11,9 @@ di Visual Studio 2022.
 
 Di seguito i progetti contenuti nella soluzione:
 
-- `MyBlazorDemo.MAUI`: il progetto principale per l'applicazione MAUI
-- `MyBlazorDemo.MAUI.Shared`: la libreria condivisa tra l'applicazione MAUI e l'applicazione Blazor.
+- `MAUI.App`: il progetto principale per l'applicazione MAUI
+- `Blazor.Shared`: la libreria condivisa tra l'applicazione MAUI e l'applicazione Blazor.
   Contiene i componenti dell'intefaccia utente e le classi di servizio
   condivise tra i due tipi di applicazione.
-- `MyBlazorDemo.MAUI.Web`: il progetto server che ospita l'applicazione Blazor WASM.
-- `MyBlazorDemo.MAUI.Web.Client`: l'applicazione Blazor WASM (client side).
+- `Blazor.Web.Server`: il progetto server che ospita l'applicazione Blazor WASM.
+- `Blazor.Web.Client`: l'applicazione Blazor WASM (client side).
