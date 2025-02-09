@@ -67,6 +67,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\APIServices\APIServices.csproj" />
     <ProjectReference Include="..\Blazor.Shared\Blazor.Shared.csproj" />
   </ItemGroup>
 

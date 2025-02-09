@@ -1,6 +1,8 @@
 using Blazor.Web.Server.Components;
 using Blazor.Web.Server.Services;
 using Blazor.Shared.Services;
+using Blazor.Web.Server.Endpoints.Weather;
+using APIServices;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +12,8 @@ builder.Services.AddRazorComponents()
 
 // Add device-specific services used by the Blazor.Shared project
 builder.Services.AddSingleton<IFormFactor, FormFactor>();
+
+builder.Services.AddSingleton<IWeatherService, WeatherService>();
 
 var app = builder.Build();
 
@@ -35,5 +39,8 @@ app.MapRazorComponents<App>()
     .AddAdditionalAssemblies(
         typeof(Blazor.Shared._Imports).Assembly,
         typeof(Blazor.Web.Client._Imports).Assembly);
+
+var weatherGroup = app.MapGroup(WeatherSerivceHttp.BaseUrl);
+weatherGroup.MapWeatherEndpoints();
 
 app.Run();
